@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Zapster</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css?v2">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="hero-anime">
+
+    <div class="navigation-wrap bg-light-zapster start-header start-style">
+        <div id="header"></div>
+    </div>
+
+    <div class="container about" id="about">
+
+        <div class="row body_content">
+            <!-- <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 p-0 mobile align-self-center">
+                <div class="animatable bounceInLeft"><img src="img/abt.jpg" class="img-fluid" /></div>
+            </div> -->
+
+            <div class="col-12 col-sm-12 align-self-center">
+
+                <div class="row align-middle">
+
+                    <div class="col-12">
+
+                        <h2 class="mb-4">About Us</h2>
+
+                        <p class="mb-3 "> Whitespace is an independent design and marketing agency based in Chennai,
+                            blending strategy, creativity, and technology to build bold brand experiences. </p>
+
+                        <p class="mt-3 "> Our tight-knit team crafts everything from content and visuals to film,
+                            animation, and digital campaigns that connect and inspire.</p>
+
+                        <p class="mt-3"> We don’t follow trends — we help shape them.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-2 p-0 d-sm-none">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 p-0 d-sm-block -->
+
+    <div class="container-fluid black footer pt-4 pb-4">
+
+        <div class="row">
+
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 p-0 ">
+
+            </div>
+
+            <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-4 p-0">
+
+                <span>Copyright © ZAPSTER</span>
+
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-0 mobile">
+
+            </div>
+
+            <div class="col-3 col-sm-4 col-md-2 col-lg-2 col-xl-2 text-right social">
+
+                <div class="row">
+
+                    <div class="col-10 col-sm-10 col-md-12 col-lg-12 col-xl-12 text-right social p-0">
+
+                        <a class="nav-link" href="#"><img src="img/fb_bottom.png?v2" class="img-fluid" /></a>
+
+                        <a class="nav-link" href="#"><img src="img/insta_bottom.png?v2" class="img-fluid" /></a>
+
+                    </div>
+
+                    <!-- <div class="col-2 text-center social p-0">
+
+                        
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 p-0 ">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/popper.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+
+
+    <script>
+
+        //Height
+        jQuery(document).ready(function ($) {
+            $(window).resize(function () {
+                location.reload();
+            });
+            // debugger
+            var headerHeight = $(".navigation-wrap").outerHeight();
+            var footerHeight = $(".footer").outerHeight();
+            var bodyheight = ($(window).height() - (headerHeight + footerHeight));
+            // alert(about_content);
+            $('.body_content').css("height", bodyheight);
+            $('#about').css("margin-top", headerHeight);
+            var doAnimations = function () {
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.length == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+                // Check all animatables and animate them if necessary
+                $animatables.each(function (i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+            };
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+            //Animation
+            $('body.hero-anime').removeClass('hero-anime');
+            $("button").click(function () {
+                $(".mobile_hide").toggleClass("mobile1");
+            });
+        });
+    </script>
+</body>
+
+</html>

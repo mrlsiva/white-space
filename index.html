@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <title>Zapster</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css?v2">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+
+<body class="hero-anime" style="max-height: 100vh; overflow: hidden;">
+    <div class="navigation-wrap bg-light-zapster start-header start-style">
+        <div id="header"></div>
+    </div>
+
+    <!-- <div class="overlay"></div> -->
+
+    <header class="">
+
+        <video class="header_video" id="web" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+
+            <source src="video/video_web.m4v" type="video/mp4">
+
+        </video>
+
+        <video class="header_video" id="mobile" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+
+            <source src="video/video_mobile.m4v" type="video/mp4">
+
+        </video>
+
+    </header>
+
+    <!-- <a href="#" class="logo" target="_blank">
+
+        <div class="output" id="output">
+
+            <span class="">We are&nbsp; </span>
+
+            <p class="cursor"></p>
+
+        </div>
+
+    </a> -->
+
+
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/popper.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+
+
+
+    <script>
+
+        //Height
+
+        jQuery(document).ready(function ($) {
+
+            $(window).resize(function () {
+
+                location.reload();
+
+            });
+
+
+
+            //Animation
+
+            $('body.hero-anime').removeClass('hero-anime');
+
+            $("button").click(function () {
+
+                $(".mobile_hide").toggleClass("mobile1");
+
+            });
+
+        });
+    </script>
+
+</body>
+
+
+
+</html>

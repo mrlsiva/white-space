@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Zapster</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css?v2">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="hero-anime">
+
+    <div class="navigation-wrap bg-light-zapster start-header start-style">
+        <div id="header"></div>
+    </div>
+    <div id="services" class="container">
+
+        <div class="row body_content">
+
+            <div class="col-12 text-center align-self-center">
+
+                <h2 class="mb-4"> DELIVERY SERVICES</h2>
+
+                <div class="row ">
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceInLeft"><img src="img/delivery_services/1.png?v2"
+                                class="img-fluid" />
+
+                            <p>Home bakes & cakes</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceIn"><img src="img/delivery_services/2.png?v2"
+                                class="img-fluid" />
+
+                            <p>Home based caterers</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceInRight"><img src="img/delivery_services/3.png?v2"
+                                class="img-fluid" />
+
+                            <p>Restaurant/Hotel</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceInLeft"><img src="img/delivery_services/4.png?v2"
+                                class="img-fluid" />
+
+                            <p>On-Demand</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceIn"><img src="img/delivery_services/5.png?v2"
+                                class="img-fluid" />
+
+                            <p>Milk & Vegetables delivery</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center">
+
+                        <div class="block animatable bounceInRight"><img src="img/delivery_services/6.png?v2"
+                                class="img-fluid" />
+
+                            <p>Subscription (Breakfast / lunch / dinner)</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid black footer pt-4 pb-4">
+
+        <div class="row">
+
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 p-0 ">
+
+            </div>
+
+            <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-4 p-0">
+
+                <span>Copyright © ZAPSTER</span>
+
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-0 mobile">
+
+            </div>
+
+            <div class="col-3 col-sm-4 col-md-2 col-lg-2 col-xl-2 text-right social">
+
+                <div class="row">
+
+                    <div class="col-10 col-sm-10 col-md-12 col-lg-12 col-xl-12 text-right social p-0">
+
+                        <a class="nav-link" href="#https://www.facebook.com/Zapster-105281394691410"><img
+                                src="img/fb_bottom.png?v2" class="img-fluid" /></a>
+
+                        <a class="nav-link" href="https://www.instagram.com/zapsterdelivery/"><img
+                                src="img/insta_bottom.png?v2" class="img-fluid" /></a>
+
+                    </div>
+
+                    <!-- <div class="col-2 text-center social p-0">
+
+                        
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 p-0 ">
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/popper.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        //Height
+        jQuery(document).ready(function ($) {
+            $(window).resize(function () {
+                location.reload();
+            });
+            var headerHeight = $(".navigation-wrap").outerHeight();
+            var footerHeight = $(".footer").outerHeight();
+            var bodyheight = $(window).height() - (headerHeight + footerHeight);
+            var service_content = $(".body_content").outerHeight();
+            // alert(service_content);
+            $('#services').css("margin-top", headerHeight);
+            // $('#services').css("height", bodyheight);
+            if ($(window).width() > 767) {
+                // debugger
+                $('.body_content').css("height", bodyheight);
+            }
+            if ($(window).width() < 767) {
+                // debugger
+                $('#services').css("padding-bottom", footerHeight);
+            }
+            var doAnimations = function () {
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.length == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+                // Check all animatables and animate them if necessary
+                $animatables.each(function (i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+            };
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+            //Animation
+            $('body.hero-anime').removeClass('hero-anime');
+            $("button").click(function () {
+                $(".mobile_hide").toggleClass("mobile1");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
