@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>White Space</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/fav.jfif">
+    <link rel="stylesheet" href="css/style.css?v2">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="hero-anime">
+
+    <div class="navigation-wrap bg-light-zapster start-header start-style">
+        <div id="header"></div>
+    </div>
+    <div id="services" class="container">
+
+        <div class="row body_content">
+            <div class="col-12 text-center align-self-center mb-4">
+                <h2 class="mt-4"> DELIVERY SERVICES</h2>
+                <h4 class="mb-4"> Whatever be your challenge, We're here to help you shine</h4>
+                <div class="row ">
+                    <!-- <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <div class="block animatable bounceInLeft">
+                            <p>Home bakes & cakes</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <div class="block animatable bounceIn">
+                            <p>Home bakes & cakes</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <div class="block animatable bounceInRight">
+                            <p>Home bakes & cakes</p>
+                        </div>
+                    </div> -->
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/1.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/2.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/3.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/4.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/5.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/6.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/7.png?v2" class="img-fluid" />
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3 text-center">
+                        <img src="img/delivery_services/8.png?v2" class="img-fluid" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid black footer pt-4 pb-4" id="footer">
+
+
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/popper.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        //Height
+        jQuery(document).ready(function ($) {
+            $(window).resize(function () {
+                location.reload();
+            });
+            var headerHeight = $(".navigation-wrap").outerHeight();
+            var footerHeight = $(".footer").outerHeight();
+            var bodyheight = $(window).height() - (headerHeight + footerHeight);
+            var service_content = $(".body_content").outerHeight();
+            // alert(service_content);
+            $('#services').css("margin-top", headerHeight);
+            // $('#services').css("height", bodyheight);
+            if ($(window).width() > 767) {
+                // debugger
+                $('.body_content').css("height", bodyheight);
+            }
+            if ($(window).width() < 767) {
+                // debugger
+                $('#services').css("padding-bottom", footerHeight);
+            }
+            var doAnimations = function () {
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.length == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+                // Check all animatables and animate them if necessary
+                $animatables.each(function (i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+            };
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+            //Animation
+            $('body.hero-anime').removeClass('hero-anime');
+            $("button").click(function () {
+                $(".mobile_hide").toggleClass("mobile1");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
