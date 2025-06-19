@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-family: "Roboto", sans-serif !important;
   font-size: 16px;
@@ -498,9 +498,18 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* #Media ================================================== */
 @media (min-width: 768px) {
+  .magic {
+    font-size: 5em;
+  }
+  .magic.mail {
+    font-size: 3em;
+  }
+  .magic.small-size {
+    font-size: 2em;
+  }
   .bg-light-zapster {
     background-color: #ffffff00 !important;
-    background: linear-gradient(to bottom, #2b2b2b, #ffffff00);
+    background: linear-gradient(to bottom, #000, #ffffff00);
     transition: all 200ms linear;
   }
   .gradient_bg {
@@ -516,8 +525,29 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     overflow: hidden;
   }
 }
-
+.magic {
+  font-family: "Montserrat", sans-serif;
+  color: #fff !important;
+  font-weight: 500 !important;
+  margin: 0.2em 0;
+}
+.magic.small-size {
+  font-weight: 400 !important;
+  font-style: italic;
+}
 @media (max-width: 767px) {
+  .magic {
+    font-size: 2em;
+  }
+  .magic.mail {
+    font-size: 1.5em;
+  }
+  .magic.small-size {
+    font-size: 2em;
+  }
+  .row-spinner {
+    top: -80px;
+  }
   .bg-light-zapster {
     background-color: #000 !important;
     transition: all 200ms linear;
@@ -1644,3 +1674,25 @@ div#carouselContent p {
 .hr-line {
   border-top: 1px solid #ccc;
 }
+.star-img {
+  width: 70px;
+  margin: auto;
+}
+/* spinner */
+.row-spinner {
+  position: absolute;
+  right: 20%;
+}
+.spinner {
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* spinner */
