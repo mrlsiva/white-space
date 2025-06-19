@@ -25,3 +25,21 @@ fetch('footer.html')
     .then(data => {
         document.getElementById('footer').innerHTML = data;
     });
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (e) {
+        const toggler = e.target.closest('.navbar-toggler');
+        if (toggler) {
+            setTimeout(function () {
+                const header = document.querySelector('.bg-light-zapster');
+
+                if (header) {
+                    if (toggler.classList.contains('collapsed')) {
+                        header.classList.remove('bg-black');
+                    } else {
+                        header.classList.add('bg-black');
+                    }
+                }
+            }, 10); // Small delay to ensure toggler class updates
+        }
+    });
+});

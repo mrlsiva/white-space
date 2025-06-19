@@ -548,10 +548,10 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .row-spinner {
     top: -80px;
   }
-  .bg-light-zapster {
+  /* .bg-light-zapster {
     background-color: #000 !important;
     transition: all 200ms linear;
-  }
+  } */
   h1 {
     font-size: 38px;
   }
@@ -1700,4 +1700,7 @@ div#carouselContent p {
   background-color: #fff !important;
   border-radius: 2px;
   overflow: hidden;
+}
+.bg-black {
+  background-color: #000 !important;
 }
