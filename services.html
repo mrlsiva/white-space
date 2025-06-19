@@ -27,117 +27,118 @@
 
         <div class="row body_content">
             <div class="col-12 align-self-center mb-2">
-                <h2 class="mt-4"> Our Services</h2>
-                <h4 class="mb-2"> Whatever be your challenge, We're here to help you shine</h4>
-                <div class="row ">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                <h2 class=""> Our Services</h2>
+                <h4 class=""> Whatever be your challenge, We're here to help you shine</h4>
+                <div class="hr-line row my-3 animatable bounceInLeft"> </div>
+
+                <div class="row">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2 ">
                         <p>Creating Clarity</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Brand Strategy</p>
                         <p>Communication Plan</p>
                         <p>Brand Messaging</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Brand Positioning</p>
                         <p>Art Direction</p>
                         <p>Tone of Voice</p>
                     </div>
                 </div>
+                <div class="hr-line row my-3 animatable bounceInLeft"> </div>
+
                 <div class="row ">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Design Distinction</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Brand Identity</p>
                         <p>Logo Design</p>
                         <p>Film/Motion Graphics</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Digital Design</p>
                         <p>Packaging Design</p>
                         <p>Wayfinder/Signage</p>
                     </div>
                 </div>
+                <div class="hr-line row my-3 animatable bounceInLeft"> </div>
+
                 <div class="row ">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Building Control</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Brand Implementation</p>
                         <p>Brand Guidelines</p>
                         <p>Art Working</p>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2">
                         <p>Brand Maintenance</p>
                         <p>Movie Title design</p>
                         <p>Typography & sports illustration</p>
                     </div>
                 </div>
-
+                <div class="hr-line row my-3 animatable bounceInLeft"> </div>
             </div>
-
         </div>
+    </div>
+    <div class="container-fluid black footer pt-4 pb-4" id="footer"></div>
+    <script src="js/jquery.min.js"></script>
 
-        <div class="container-fluid black footer pt-4 pb-4" id="footer">
+    <script src="js/popper.min.js"></script>
 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
 
-
-        </div>
-        <script src="js/jquery.min.js"></script>
-
-        <script src="js/popper.min.js"></script>
-
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/common.js"></script>
-
-        <script>
-            //Height
-            jQuery(document).ready(function ($) {
-                $(window).resize(function () {
-                    location.reload();
-                });
-                var headerHeight = $(".navigation-wrap").outerHeight();
-                var footerHeight = $(".footer").outerHeight();
-                var bodyheight = $(window).height() - (headerHeight + footerHeight);
-                var service_content = $(".body_content").outerHeight();
-                // alert(service_content);
-                $('#services').css("margin-top", headerHeight);
-                // $('#services').css("height", bodyheight);
-                if ($(window).width() > 767) {
-                    // debugger
-                    $('.body_content').css("height", bodyheight);
-                }
-                if ($(window).width() < 767) {
-                    // debugger
-                    $('#services').css("padding-bottom", footerHeight);
-                }
-                var doAnimations = function () {
-                    // Calc current offset and get all animatables
-                    var offset = $(window).scrollTop() + $(window).height(),
-                        $animatables = $('.animatable');
-                    // Unbind scroll handler if we have no animatables
-                    if ($animatables.length == 0) {
-                        $(window).off('scroll', doAnimations);
-                    }
-                    // Check all animatables and animate them if necessary
-                    $animatables.each(function (i) {
-                        var $animatable = $(this);
-                        if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-                            $animatable.removeClass('animatable').addClass('animated');
-                        }
-                    });
-                };
-                // Hook doAnimations on scroll, and trigger a scroll
-                $(window).on('scroll', doAnimations);
-                $(window).trigger('scroll');
-                //Animation
-                $('body.hero-anime').removeClass('hero-anime');
-                $("button").click(function () {
-                    $(".mobile_hide").toggleClass("mobile1");
-                });
+    <script>
+        //Height
+        jQuery(document).ready(function ($) {
+            $(window).resize(function () {
+                location.reload();
             });
-        </script>
+            var headerHeight = $(".navigation-wrap").outerHeight();
+            var footerHeight = $(".footer").outerHeight();
+            var bodyheight = $(window).height() - (headerHeight + footerHeight);
+            var service_content = $(".body_content").outerHeight();
+            // alert(service_content);
+            $('#services').css("margin-top", headerHeight);
+            // $('#services').css("height", bodyheight);
+            if ($(window).width() > 767) {
+                // debugger
+                $('.body_content').css("height", bodyheight);
+            }
+            if ($(window).width() < 767) {
+                // debugger
+                $('#services').css("padding-bottom", footerHeight);
+            }
+            var doAnimations = function () {
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.length == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+                // Check all animatables and animate them if necessary
+                $animatables.each(function (i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+            };
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+            //Animation
+            $('body.hero-anime').removeClass('hero-anime');
+            $("button").click(function () {
+                $(".mobile_hide").toggleClass("mobile1");
+            });
+        });
+    </script>
 
 </body>
 
