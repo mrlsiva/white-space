@@ -1681,7 +1681,7 @@ div#carouselContent p {
 /* spinner */
 .row-spinner {
   position: absolute;
-  right: 20%;
+  right: 12px;
 }
 .spinner {
   animation: spin 5s infinite linear;
@@ -1696,3 +1696,8 @@ div#carouselContent p {
   }
 }
 /* spinner */
+.white-bg {
+  background-color: #fff !important;
+  border-radius: 2px;
+  overflow: hidden;
+}
