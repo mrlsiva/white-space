@@ -78,8 +78,8 @@ span {
 }
 
 .navbar-brand img {
-  height: 50px;
-  margin-top: 12px;
+  height: 80px;
+  margin-top: 0px;
   width: auto;
   display: block;
   /* filter: brightness(10%); */
@@ -1703,4 +1703,75 @@ div#carouselContent p {
 }
 .bg-black {
   background-color: #000 !important;
+}
+img.star-img.spinner.h-32 {
+  height: 24px;
+}
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 120vh;
+  pointer-events: none;
+  border: none;
+}
+
+.scrolling-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  z-index: 9999;
+  position: fixed;
+  bottom: 10vh;
+  font-size: 24px;
+}
+
+.scrolling-text a {
+  display: block;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.services {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+}
+
+.service {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hover-img {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  transition: transform 0.05s linear;
+  max-height: 120px;
+  z-index: 9;
 }

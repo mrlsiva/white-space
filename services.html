@@ -31,7 +31,8 @@
                 <h4 class=""> Whatever be your challenge, We're here to help you shine</h4>
                 <div class="hr-line row my-3 animatable bounceInLeft"> </div>
 
-                <div class="row">
+                <div class="row service" id="webDev">
+                    <img src="img/asterisk-1.svg" class="hover-img" />
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mb-2 ">
                         <p>Creating Clarity</p>
                     </div>
@@ -91,7 +92,27 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
+    <script>
+        document.querySelectorAll('.service').forEach(service => {
+            const img = service.querySelector('.hover-img');
 
+            service.addEventListener('mouseenter', () => {
+                img.style.display = 'block';
+            });
+
+            service.addEventListener('mouseleave', () => {
+                img.style.display = 'none';
+            });
+
+            service.addEventListener('mousemove', e => {
+                const rect = service.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                img.style.left = `${x - 60}px`; // center image roughly
+                img.style.top = `${y - 40}px`;
+            });
+        });
+    </script>
     <script>
         //Height
         jQuery(document).ready(function ($) {
