@@ -1776,7 +1776,7 @@ img.star-img.spinner.h-32 {
   display: none;
   pointer-events: none;
   transition: transform 0.05s linear;
-  max-height: 120px;
+  max-height: 180px;
   z-index: 9;
 }
 .marquee-wrapper {
