@@ -506,6 +506,7 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
   .magic.small-size {
     font-size: 2em;
+    text-align: left;
   }
   .bg-light-zapster {
     background-color: #ffffff00 !important;
@@ -1680,6 +1681,7 @@ div#carouselContent p {
 }
 .star-img {
   width: 70px;
+  max-width: 70px !important;
   margin: auto;
 }
 /* spinner */
