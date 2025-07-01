@@ -536,6 +536,9 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-style: italic;
 }
 @media (max-width: 767px) {
+  .navigation-wrap {
+    background: #000;
+  }
   .magic {
     font-size: 2em;
   }
@@ -691,6 +694,7 @@ header {
 .footer {
   position: fixed;
   bottom: 0;
+  width: 100%;
 }
 
 #services p {
@@ -1774,4 +1778,49 @@ img.star-img.spinner.h-32 {
   transition: transform 0.05s linear;
   max-height: 120px;
   z-index: 9;
+}
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.marquee-content .star-img {
+  height: 32px;
+  margin: 0 10px;
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
